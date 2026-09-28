@@ -112,6 +112,10 @@ The application can then be opened using an Android emulator or Expo Go.
 
 ## Screenshots
 
+### Login Screen
+<img width="512" height="890" alt="image" src="https://github.com/user-attachments/assets/8cb07f9d-e5f3-4225-a393-300ebe304a43" />
+
+
 ### Grocery List
 
 <img width="540" height="877" alt="image" src="https://github.com/user-attachments/assets/d4ed3035-a20e-4836-b87b-0414ce071c04" />
