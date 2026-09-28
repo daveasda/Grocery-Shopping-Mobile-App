@@ -118,7 +118,7 @@ The application can then be opened using an Android emulator or Expo Go.
 
 ### Grocery List
 
-<img width="540" height="877" alt="image" src="https://github.com/user-attachments/assets/d4ed3035-a20e-4836-b87b-0414ce071c04" />
+<img width="517" height="867" alt="image" src="https://github.com/user-attachments/assets/9968d4f9-5379-4784-95b4-77f46ad37dd1" />
 
 ### Add Grocery Item
 
