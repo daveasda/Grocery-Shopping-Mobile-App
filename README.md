@@ -1,56 +1,121 @@
-# Welcome to your Expo app 👋
+# Grocery Shopping Mobile App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A simple mobile grocery shopping application built using React Native and Expo.
 
-## Get started
+The application allows users to create an account, sign in, and manage their own grocery list. Grocery data and user authentication are handled using Supabase.
 
-1. Install dependencies
+## Features
 
-   ```bash
-   npm install
-   ```
+- User registration and login
+- User authentication with Supabase
+- Add grocery items
+- View grocery items
+- Mark items as bought or not bought
+- Delete grocery items
+- Each user has their own grocery list
+- Row Level Security (RLS) for protecting user data
 
-2. Start the app
+## CRUD Operations
 
-   ```bash
-   npx expo start
-   ```
+The application supports the four basic CRUD operations:
 
-In the output, you'll find options to open the app in a
+- **Create** - Add a new grocery item
+- **Read** - View grocery items
+- **Update** - Mark an item as bought or not bought
+- **Delete** - Remove a grocery item
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Technologies Used
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- React Native
+- Expo
+- TypeScript
+- Expo Router
+- NativeWind
+- Supabase
+- Supabase Authentication
+- Supabase PostgreSQL Database
+- Supabase Row Level Security
 
-## Get a fresh project
+## Project Structure
 
-When you're ready, run:
-
-```bash
-npm run reset-project
+```text
+src/
+├── app/
+│   ├── (auth)/
+│   │   ├── _layout.tsx
+│   │   └── login.tsx
+│   │
+│   ├── (app)/
+│   │   ├── _layout.tsx
+│   │   ├── home.tsx
+│   │   └── add-item.tsx
+│   │
+│   └── _layout.tsx
+│
+├── context/
+│   └── AuthContext.tsx
+│
+└── services/
+    ├── authService.ts
+    └── groceryService.ts
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Database
 
-### Other setup steps
+The application uses a Supabase table named `grocery_items`.
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+Main fields include:
 
-## Learn more
+- `id`
+- `user_id`
+- `name`
+- `quantity`
+- `is_bought`
+- `created_at`
 
-To learn more about developing your project with Expo, look at the following resources:
+Row Level Security policies ensure that users can only access and modify their own grocery items.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Running the Project
 
-## Join the community
+Clone the repository:
 
-Join our community of developers creating universal apps.
+```bash
+git clone <repository-url>
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Navigate to the Expo project:
+
+```bash
+cd Grocery-Shopping-Mobile-App/my-app
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create the required environment variables for Supabase:
+
+```env
+EXPO_PUBLIC_SUPABASE_URL=your_supabase_url
+EXPO_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+Start the Expo development server:
+
+```bash
+npx expo start
+```
+
+The application can then be opened using an Android emulator or Expo Go.
+
+## Screenshots
+
+### Grocery List
+
+<img width="540" height="877" alt="image" src="https://github.com/user-attachments/assets/d4ed3035-a20e-4836-b87b-0414ce071c04" />
+
+### Add Grocery Item
+
+<img width="422" height="840" alt="image" src="https://github.com/user-attachments/assets/59752f41-b886-4b92-9740-d166c8a8e2ed" />
